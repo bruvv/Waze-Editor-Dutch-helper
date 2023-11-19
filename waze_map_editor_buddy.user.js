@@ -8,8 +8,8 @@
 // @exclude      *://*.waze.com/user/editor*
 // @grant        GM_addStyle
 // @require      https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.js
-// @updateURL    https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_budy.js
-// @downloadURL  https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_budy.js
+// @updateURL    https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_buddy.user.js
+// @downloadURL  https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_buddy.user.js
 // @supportURL   https://github.com/bruvv/Waze-Editor-Dutch-helper/issues
 // ==/UserScript==
 
