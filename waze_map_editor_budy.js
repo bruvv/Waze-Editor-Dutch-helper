@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
 // @version      0.2
 // @description  Open various map services from Waze Editor
 // @author       Nivong
@@ -8,6 +8,9 @@
 // @exclude      *://*.waze.com/user/editor*
 // @grant        GM_addStyle
 // @require      https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.js
+// @updateURL    https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_budy.js
+// @downloadURL  https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_budy.js
+// @supportURL   https://github.com/bruvv/Waze-Editor-Dutch-helper/issues
 // ==/UserScript==
 
 /* global proj4 */
