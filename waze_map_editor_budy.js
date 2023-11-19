@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
@@ -54,8 +54,8 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 	GM_addStyle(`
         .dropdown {
             position: fixed;
-            top: 50%;
-            right: 20px;
+            top: 3%;
+            right: 30%;
             transform: translateY(-50%);
             z-index: 1000;
         }
@@ -104,12 +104,27 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 	dropdownContent.className = "dropdown-content";
 
 	let maps = [
-		{ name: "Google Maps", logo: "URL_TO_GOOGLE_MAPS_LOGO" },
-		{ name: "Mapillary", logo: "URL_TO_MAPILLARY_LOGO" },
-		{ name: "Satellietdataportaal", logo: "URL_TO_SATELLIETDATAPORTAAL_LOGO" },
-		{ name: "Wegstatus", logo: "URL_TO_WEGSTATUS_LOGO" },
-		{ name: "Melvin", logo: "URL_TO_MELVIN_LOGO" },
-		{ name: "BAG Viewer", logo: "URL_TO_BAG_VIEWER_LOGO" },
+		{
+			name: "Google Maps",
+			logo: "https://www.google.com/favicon.ico",
+		},
+		{
+			name: "Mapillary",
+			logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mapillary_logo.svg/1024px-Mapillary_logo.svg.png",
+		},
+		{
+			name: "Satellietdataportaal",
+			logo: "https://satellietdataportaal.nl/favicon.ico",
+		},
+		{ name: "Wegstatus", logo: "https://www.wegstatus.nl/favicon.ico" },
+		{
+			name: "Melvin",
+			logo: "https://melvin.ndw.nu/assets/icon/favicon-32.png",
+		},
+		{
+			name: "BAG Viewer",
+			logo: "https://bagviewer.kadaster.nl/lvbag/bag-viewer/favicon.ico",
+		},
 	];
 
 	maps.forEach(function (map) {
