@@ -1,20 +1,23 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
-// @version      2023.11.21.002
+// @version      2023.11.21.003
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
 // @exclude      *://*.waze.com/user/editor*
 // @grant        GM_addStyle
-// @require      https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.js
+// @require      https://update.greasyfork.org/scripts/383120/698689/Proj4js-Wazedev.js
+// @require      https://update.greasyfork.org/scripts/24851/1161728/WazeWrap.js
 // @updateURL    https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_buddy.user.js
 // @downloadURL  https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_buddy.user.js
 // @supportURL   https://github.com/bruvv/Waze-Editor-Dutch-helper/issues
 // @license      GPLv3
 // ==/UserScript==
 
-/* global proj4 */
+/* global WazeWrap, I18n, proj4, $, W */
+/* eslint curly: ["warn", "multi-or-nest"] */
+
 proj4.defs(
 	"EPSG:28992",
 	"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.237,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs"
