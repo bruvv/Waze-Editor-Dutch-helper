@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
-// @version      2023.11.19.001
+// @version      2023.11.21.001
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
@@ -156,17 +156,18 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 		let params = new URLSearchParams(window.location.search);
 		let lat = parseFloat(params.get("lat"));
 		let lon = parseFloat(params.get("lon"));
+		let latStr = lat.toString().replace(".", "d");
+		let lonStr = lon.toString().replace(".", "d");
 		let wazeZoom = parseInt(params.get("zoomLevel"));
 		let mapillaryZoom = calculateMapillaryZoom(wazeZoom);
 		let satellietZoom = calculateSatellietDataPortaalZoom(wazeZoom);
 		let bagZoom = calculateBAGZoom(wazeZoom);
 		let transformedCoordinates = proj4("EPSG:4326", "EPSG:28992", [lon, lat]);
 
-		if (!isFinite(lat) || !isFinite(lon)) {
+		if (!isFinite(parseFloat(lat)) || !isFinite(parseFloat(lon))) {
 			alert("Invalid coordinates!");
 			return;
 		}
-
 		let url = "";
 		switch (mapName) {
 			case "Google Maps":
@@ -179,7 +180,7 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 				url = `https://www.satellietdataportaal.nl/?base=brtachtergrondkaart&loc=${lat}%2C${lon}%2C${satellietZoom}z&overlay=mos-0`;
 				break;
 			case "Wegstatus":
-				url = `https://www.wegstatus.nl/?lat=${lat}&lon=${lon}`;
+				url = `https://www.wegstatus.nl/dashboardnl/lat=${latStr}%7Clon=${lonStr}`;
 				break;
 			case "Melvin": {
 				const offsetLat = 0.002; // Latitude offset for bounding box
