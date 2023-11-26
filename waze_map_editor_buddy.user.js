@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
-// @version      2023.11.21.003
+// @version      2023.11.26.001
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
@@ -195,7 +195,7 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 				let neLat = lat + offsetLat;
 				let neLon = lon + offsetLon;
 
-				url = `https://melvin.ndw.nu/public?sw=${swLat},%20${swLon}&ne=${neLat},%20${neLon}&showHeader=false`;
+				url = `https://melvin.ndw.nu/public?sw=${swLat},%20${swLon}&ne=${neLat},%20${neLon}&showHeader=true`;
 				break;
 			}
 			case "BAG Viewer":
