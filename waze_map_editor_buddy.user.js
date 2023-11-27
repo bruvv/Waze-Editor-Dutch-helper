@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
-// @version      2023.11.27.002
+// @version      2023.11.27.003
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
