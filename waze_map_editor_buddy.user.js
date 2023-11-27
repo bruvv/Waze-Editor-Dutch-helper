@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
-// @version      2023.11.26.001
+// @version      2023.11.27.001
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
@@ -53,6 +53,12 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 	// Convert Waze zoom level to Satelliet Data Portaal zoom level
 	// Adjust this mapping as needed
 	return wazeZoom;
+}
+
+function convertZoomForGoogleMaps(wazeZoom) {
+    // Example conversion logic - this may need to be adjusted
+    // Google Maps zoom levels range from 0 (the entire world) to 21+ (individual buildings)
+    return Math.max(0, Math.min(21, wazeZoom - 5)); // Adjust this formula as needed
 }
 
 (function () {
@@ -163,6 +169,7 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 		let latStr = lat.toString().replace(".", "d");
 		let lonStr = lon.toString().replace(".", "d");
 		let wazeZoom = parseInt(params.get("zoomLevel"));
+        let googleMapsZoom = convertZoomForGoogleMaps(wazeZoom);
 		let mapillaryZoom = calculateMapillaryZoom(wazeZoom);
 		let satellietZoom = calculateSatellietDataPortaalZoom(wazeZoom);
 		let bagZoom = calculateBAGZoom(wazeZoom);
@@ -175,7 +182,7 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 		let url = "";
 		switch (mapName) {
 			case "Google Maps":
-				url = `https://www.google.com/maps/?q=${lat},${lon}`;
+				url = `https://www.google.com/maps/?q=${lat},${lon}&z=${googleMapsZoom}`;
 				break;
 			case "Mapillary":
 				url = `https://www.mapillary.com/app/?lat=${lat}&lng=${lon}&z=${mapillaryZoom}`; // Adjust zoom level as needed
@@ -195,7 +202,7 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 				let neLat = lat + offsetLat;
 				let neLon = lon + offsetLon;
 
-				url = `https://melvin.ndw.nu/public?sw=${swLat},%20${swLon}&ne=${neLat},%20${neLon}&showHeader=true`;
+				url = `https://melvin.ndw.nu/public?sw=${swLat},%20${swLon}&ne=${neLat},%20${neLon}&showHeader=false`;
 				break;
 			}
 			case "BAG Viewer":
