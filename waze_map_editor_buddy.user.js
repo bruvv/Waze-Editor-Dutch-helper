@@ -9,8 +9,8 @@
 // @grant        GM_addStyle
 // @require      https://update.greasyfork.org/scripts/383120/698689/Proj4js-Wazedev.js
 // @require      https://update.greasyfork.org/scripts/24851/1161728/WazeWrap.js
-// @updateURL    https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_buddy.user.js
-// @downloadURL  https://raw.githubusercontent.com/bruvv/Waze-Editor-Dutch-helper/main/waze_map_editor_buddy.user.js
+// @updateURL    https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
+// @downloadURL  https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
 // @supportURL   https://github.com/bruvv/Waze-Editor-Dutch-helper/issues
 // @license      GPLv3
 // ==/UserScript==
