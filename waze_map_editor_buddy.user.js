@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
-// @version      2023.11.27.006
+// @version      2023.11.27.007
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @homepageURL  https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @updateURL    https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
@@ -203,7 +203,7 @@ function convertZoomForGoogleMaps(wazeZoom) {
 				let neLat = lat + offsetLat;
 				let neLon = lon + offsetLon;
 
-				url = `https://melvin.ndw.nu/public?sw=${swLat},%20${swLon}&ne=${neLat},%20${neLon}&showHeader=false`;
+				url = `https://melvin.ndw.nu/public?sw=${swLat},%20${swLon}&ne=${neLat},%20${neLon}&showHeader=true`;
 				break;
 			}
 			case "BAG Viewer":
