@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
-// @version      2023.11.27.005
+// @version      2023.11.27.006
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @homepageURL  https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @updateURL    https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
