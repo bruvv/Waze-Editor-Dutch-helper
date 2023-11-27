@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper
-// @version      2023.11.27.001
+// @version      2023.11.27.002
 // @description  Open various map services from Waze Editor
 // @author       Nivong
 // @match        *://*.waze.com/*editor*
@@ -58,7 +58,7 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 function convertZoomForGoogleMaps(wazeZoom) {
     // Example conversion logic - this may need to be adjusted
     // Google Maps zoom levels range from 0 (the entire world) to 21+ (individual buildings)
-    return Math.max(0, Math.min(21, wazeZoom - 5)); // Adjust this formula as needed
+    return Math.max(0, Math.min(21, wazeZoom)); // Adjust this formula as needed
 }
 
 (function () {
@@ -182,7 +182,7 @@ function convertZoomForGoogleMaps(wazeZoom) {
 		let url = "";
 		switch (mapName) {
 			case "Google Maps":
-				url = `https://www.google.com/maps/?q=${lat},${lon}&z=${googleMapsZoom}`;
+				url = `https://www.google.com/maps/place/${lat},${lon}/@${lat},${lon},${googleMapsZoom}z`;
 				break;
 			case "Mapillary":
 				url = `https://www.mapillary.com/app/?lat=${lat}&lng=${lon}&z=${mapillaryZoom}`; // Adjust zoom level as needed
