@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
-// @version      2023.11.27.007
+// @version      2023.12.05.001
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @homepageURL  https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @updateURL    https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
@@ -68,9 +68,8 @@ function convertZoomForGoogleMaps(wazeZoom) {
 	GM_addStyle(`
         .dropdown {
             position: fixed;
-            top: 3%;
-            right: 30%;
-            transform: translateY(-50%);
+            bottom: 35%;
+            right: 1%;
             z-index: 1000;
         }
         .dropdown-logo {
