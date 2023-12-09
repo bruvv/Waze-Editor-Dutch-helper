@@ -57,9 +57,9 @@ function calculateSatellietDataPortaalZoom(wazeZoom) {
 }
 
 function convertZoomForGoogleMaps(wazeZoom) {
-    // Example conversion logic - this may need to be adjusted
-    // Google Maps zoom levels range from 0 (the entire world) to 21+ (individual buildings)
-    return Math.max(0, Math.min(21, wazeZoom)); // Adjust this formula as needed
+	// Example conversion logic - this may need to be adjusted
+	// Google Maps zoom levels range from 0 (the entire world) to 21+ (individual buildings)
+	return Math.max(0, Math.min(21, wazeZoom)); // Adjust this formula as needed
 }
 
 (function () {
@@ -169,7 +169,7 @@ function convertZoomForGoogleMaps(wazeZoom) {
 		let latStr = lat.toString().replace(".", "d");
 		let lonStr = lon.toString().replace(".", "d");
 		let wazeZoom = parseInt(params.get("zoomLevel"));
-        let googleMapsZoom = convertZoomForGoogleMaps(wazeZoom);
+		let googleMapsZoom = convertZoomForGoogleMaps(wazeZoom);
 		let mapillaryZoom = calculateMapillaryZoom(wazeZoom);
 		let satellietZoom = calculateSatellietDataPortaalZoom(wazeZoom);
 		let bagZoom = calculateBAGZoom(wazeZoom);
@@ -191,7 +191,7 @@ function convertZoomForGoogleMaps(wazeZoom) {
 				url = `https://www.satellietdataportaal.nl/?base=brtachtergrondkaart&loc=${lat}%2C${lon}%2C${satellietZoom}z&overlay=mos-0`;
 				break;
 			case "Wegstatus":
-				url = `https://www.wegstatus.nl/dashboardnl/lat=${latStr}%7Clon=${lonStr}`;
+				url = `https://www.wegstatus.nl/dashboardnl/lat=${latStr}%7Clon=${lonStr}%7Cz=${satellietZoom}`;
 				break;
 			case "Melvin": {
 				const offsetLat = 0.002; // Latitude offset for bounding box
