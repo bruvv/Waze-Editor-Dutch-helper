@@ -192,7 +192,7 @@ function convertZoomForGoogleMaps(wazeZoom) {
 				url = `https://www.mapillary.com/app/?lat=${lat}&lng=${lon}&z=${mapillaryZoom}`; // Adjust zoom level as needed
 				break;
 			case "Satellietdataportaal":
-				url = `https://www.satellietdataportaal.nl/?base=brtachtergrondkaart&loc=${lat}%2C${lon}%2C${satellietZoom}z&overlay=mos-0`;
+				url = `https://viewer.satellietdataportaal.nl/@${lat},${lon},${satellietZoom}`;
 				break;
 			case "Wegstatus":
 				url = `https://www.wegstatus.nl/dashboardnl/lat=${latStr}%7Clon=${lonStr}%7Cz=${satellietZoom}`;
