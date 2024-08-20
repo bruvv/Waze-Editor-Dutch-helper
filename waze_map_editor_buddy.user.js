@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
-// @version      2024.08.01.001
+// @version      2024.08.20.001
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @homepageURL  https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @updateURL    https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
@@ -218,4 +218,6 @@ function convertZoomForGoogleMaps(wazeZoom) {
 			window.open(url, "_blank");
 		}
 	}
+  event.preventDefault();
+    return false;
 })();
