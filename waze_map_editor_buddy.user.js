@@ -195,7 +195,7 @@ function convertZoomForGoogleMaps(wazeZoom) {
 				url = `https://viewer.satellietdataportaal.nl/@${lat},${lon},${satellietZoom}`;
 				break;
 			case "Wegstatus":
-				url = `https://www.wegstatus.nl/dashboardnl/lat=${latStr}%7Clon=${lonStr}%7Cz=${satellietZoom}`;
+				url = `https://www.wegstatus.nl/dashboardnl_old/lat=${latStr}%7Clon=${lonStr}%7Cz=${satellietZoom}`;
 				break;
 			case "Melvin": {
 				const offsetLat = 0.002; // Latitude offset for bounding box
