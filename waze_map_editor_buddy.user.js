@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Waze Editor Dutch helper
-// @version      2024.11.20.001
+// @version      2024.11.21.001
 // @namespace    https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @homepageURL  https://github.com/bruvv/Waze-Editor-Dutch-helper/
 // @updateURL    https://github.com/bruvv/Waze-Editor-Dutch-helper/raw/main/waze_map_editor_buddy.user.js
@@ -32,10 +32,10 @@ proj4.defs(
 	"use strict";
 
 	window.setInterval(function () {
-		let permaElement = document.querySelector("a.permalink");
+		let permaElement = W.selectionManager.getSelectedFeatures();
 
 		if (permaElement != null) {
-			let fullURL = document.querySelector("a.permalink").href;
+			let fullURL = W.selectionManager.getSelectedFeatures().href;
 			let index = fullURL.indexOf("/editor");
 			let path = fullURL.substr(index, fullURL.length);
 			path = path.replace(/&s=[0-9]*/, "");
